@@ -61,12 +61,21 @@ public class Prodotto {
     public boolean controlloCodice(){
         boolean c=false;
         int somma=0;
-        for(int i=0; i<codBarre.length();i+=2){
+        for(int i=0; i<codBarre.length()-2;i+=2){
             somma+=codBarre.charAt(i)-'0';
         }
-        for(int i=1; i<codBarre.length()-1;i+=2){
+        for(int i=1; i<codBarre.length()-2;i+=2){
             somma+=codBarre.charAt(i)-'0'*3;
         }
+        /*
+        for(int i=0;i<codBarre.length-2;i++){
+            if(i%2!=0){
+                somma+=codBarre.charAt(i)-'0'*3;
+            }else{
+                somma+=codBarre.charAt(i)-'0';
+            }
+        }
+        */
         if((somma%10)==(codBarre.charAt(codBarre.length()-1)-'0')){
             c=true;
         }
