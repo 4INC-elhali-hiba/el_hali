@@ -13,14 +13,20 @@ public class Supermercato {
     private String nome;
     private String indirizzo;
     private Prodotto[] prodotti;
+    private int dimL;
     
-    public Supermercato(String nome,String indirizzo,double[] prezzo,double[] iva,double[] peso,double[] tara,String[] desc,String[] codBarre){
+    public Supermercato(int nMerce,String nome,String indirizzo,double[] prezzo,double[] iva,double[] peso,double[] tara,String[] desc,String[] codBarre){
         this.nome=nome;
         this.indirizzo=indirizzo;
-        prodotti=new Prodotto[prezzo.length];
+        prodotti=new Prodotto[nMerce];
         for(int i=0;i<prodotti.length;i++){
-            prodotti[i]=new Prodotto(prezzo[i],iva[i],peso[i],tara[i],desc[i],codBarre[i]);
+            addProdotto(prezzo[i],iva[i],peso[i],tara[i],desc[i],codBarre[i]);
         }
+    }
+    
+    public void addProdotto(double prezzo, double iva, double peso, double tara, String desc, String codBarre){
+        prodotti[dimL]= new Prodotto(prezzo,iva,peso,tara,desc,codBarre);
+        dimL++;
     }
 
     public String getNome() {

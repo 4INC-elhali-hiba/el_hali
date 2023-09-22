@@ -65,17 +65,8 @@ public class Prodotto {
             somma+=codBarre.charAt(i)-'0';
         }
         for(int i=1; i<codBarre.length()-2;i+=2){
-            somma+=codBarre.charAt(i)-'0'*3;
+            somma+=(codBarre.charAt(i)-'0')*3;
         }
-        /*
-        for(int i=0;i<codBarre.length-2;i++){
-            if(i%2!=0){
-                somma+=codBarre.charAt(i)-'0'*3;
-            }else{
-                somma+=codBarre.charAt(i)-'0';
-            }
-        }
-        */
         if((somma%10)==(codBarre.charAt(codBarre.length()-1)-'0')){
             c=true;
         }
@@ -85,7 +76,7 @@ public class Prodotto {
     public String stampa(){
         String t="Classe Prodotto: ";
         t+="\nPrezzo prodotto: "+prezzo+"$";
-        t+="\nIva prodotto: "+iva;
+        t+="\nIva prodotto: "+iva+"%";
         t+="\nPeso prodotto: "+peso+"Kg";
         t+="\nTara prodotto: "+tara;
         t+="\nNome prodotto: "+desc;
