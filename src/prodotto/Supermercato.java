@@ -20,13 +20,30 @@ public class Supermercato {
         this.indirizzo=indirizzo;
         prodotti=new Prodotto[nMerce];
         for(int i=0;i<prodotti.length;i++){
-            addProdotto(prezzo[i],iva[i],peso[i],tara[i],desc[i],codBarre[i]);
+            addProd(prezzo[i],iva[i],peso[i],tara[i],desc[i],codBarre[i]);
         }
     }
     
-    public void addProdotto(double prezzo, double iva, double peso, double tara, String desc, String codBarre){
-        prodotti[dimL]= new Prodotto(prezzo,iva,peso,tara,desc,codBarre);
-        dimL++;
+    public void addProd(double prezzo, double iva, double peso, double tara, String desc, String codBarre){
+        Prodotto p =new Prodotto(prezzo,iva,peso,tara,desc,codBarre);
+        addProdotto(p);
+    }
+    
+    public void addProdotto(Prodotto prodotto){
+        if(dimL==prodotti.length){
+            resize();
+        }else{
+            prodotti[prodotti.length-1]=prodotto;
+            dimL++; 
+        }
+    }
+    
+    private void resize(){
+        Prodotto[] prodottiCopia=new Prodotto[prodotti.length+(int)(prodotti.length*0.20)];
+        for(int i=0;i<prodotti.length;i++){
+            prodottiCopia[i]=prodotti[i];
+        }
+        prodotti=prodottiCopia;
     }
 
     public String getNome() {

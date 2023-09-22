@@ -15,7 +15,7 @@ public class ProdottoTest {
         double peso=300;
         double tara=1.02;
         String desc="Patatine";
-        String codBarre="8003130127922";
+        String codBarre="8004120902758";
         
         Prodotto p=new Prodotto(prezzo,iva,peso,tara,desc,codBarre);
         System.out.println(p.prezzoIvato());

@@ -23,9 +23,10 @@ public class SupermercatoTest {
         double[] tara={0.02,0.01,0.05};
         String[] desc={"Acqua frizzante","Patatine","Deodorante"};
         int[][] codiceBarre={{1,2,3},{1,2,3}};
+        int nMerce=3;
         String[] codBarre={"801796057020","8003130127922","8004120902758"};
         
-        Supermercato s=new Supermercato(nome,indirizzo,prezzo,iva,peso,tara,desc,codBarre);
+        Supermercato s=new Supermercato(nMerce,nome,indirizzo,prezzo,iva,peso,tara,desc,codBarre);
         System.out.println(s.prezzoAlto());
         System.out.println(s.valoreMerce());
         System.out.println(s.pesoMinore());

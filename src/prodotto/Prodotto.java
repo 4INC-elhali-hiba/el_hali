@@ -25,6 +25,15 @@ public class Prodotto {
         this.desc=desc;
         this.codBarre=codBarre;
     }
+    
+    public Prodotto(Prodotto merce){
+        this.prezzo=merce.prezzo;
+        this.iva=merce.iva;
+        this.peso=merce.peso;
+        this.tara=merce.tara;
+        this.desc=merce.desc;
+        this.codBarre=merce.codBarre;
+    }
 
     public double getPrezzo() {
         return prezzo;
@@ -62,12 +71,17 @@ public class Prodotto {
         boolean c=false;
         int somma=0;
         for(int i=0; i<codBarre.length()-2;i+=2){
-            somma+=codBarre.charAt(i)-'0';
-        }
-        for(int i=1; i<codBarre.length()-2;i+=2){
             somma+=(codBarre.charAt(i)-'0')*3;
         }
-        if((somma%10)==(codBarre.charAt(codBarre.length()-1)-'0')){
+        System.out.println(somma);
+        for(int i=1;i<codBarre.length()-2;i+=2){
+            somma+=codBarre.charAt(i)-'0';
+        }
+        System.out.println(somma);
+        System.out.println((10-(somma%10)));
+        System.out.println(somma%10);
+        System.out.println((codBarre.charAt(0)-'0'));
+        if((10-(somma%10))==(codBarre.charAt(0)-'0')){
             c=true;
         }
         return c;
