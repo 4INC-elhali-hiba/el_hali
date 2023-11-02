@@ -32,7 +32,7 @@ public class Studente2 {
                 throw new Exception("Il cognome non può essere vuoto");
             }
         } catch (NullPointerException e) {
-            throw new Exception("I il nome e cognome non possono essere null");
+            throw new Exception("Nome e cognome non possono essere null");
         }
 
     }

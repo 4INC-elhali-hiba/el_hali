@@ -34,6 +34,21 @@ public class Classe2 {
         this.studenti = studenti;
     }
     
+    public void invertiAttributi(){
+        String t;
+        for(int i=0;i<studenti.length;i++){
+            t=studenti[i].getCognome();
+            studenti[i].setCognome(studenti[i].getNome());
+            studenti[i].setNome(t);
+        }
+    }
     
+    public String toString(){
+        String t="\nClasse Classe\ncapo classe: "+capoClasse;
+        for(int i=0; i<studenti.length; i++){
+            t+="\nstudente: "+studenti[i].toString();
+        }
+        return t;
+    }
 
 }
