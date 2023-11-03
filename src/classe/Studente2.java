@@ -14,27 +14,14 @@ public class Studente2 {
     private String cognome;
     private String nome;
 
-    public Studente2(String cognome, String nome) {
+    public Studente2(String cognome, String nome) throws Exception{
         setCognome(cognome);
         setNome(nome);
     }
 
     public Studente2(Studente2 s) throws Exception {
-        try {
-            if (!s.getCognome().isEmpty()) {
-                if (!s.getNome().isEmpty()) {
-                    this.cognome = s.getCognome();
-                    this.nome = s.getNome();
-                } else {
-                    throw new Exception("Il nome non può essere vuoto");
-                }
-            } else {
-                throw new Exception("Il cognome non può essere vuoto");
-            }
-        } catch (NullPointerException e) {
-            throw new Exception("Nome e cognome non possono essere null");
-        }
-
+        setCognome(s.getCognome());
+        setNome(s.getNome());
     }
 
     public String getCognome() {
@@ -45,12 +32,36 @@ public class Studente2 {
         return nome;
     }
 
-    public final void setCognome(String cognome) {
-        this.cognome = cognome;
+    public final void setCognome(String cognome) throws Exception{
+        try {
+            if (!cognome.isEmpty()) {
+                if(Character.isUpperCase(cognome.charAt(0))){
+                    this.cognome=cognome;
+                }else{
+                    throw new Exception("Il cognome deve avere la prima lettera maiuscola");
+                }
+            } else {
+                throw new Exception("Il cognome non può essere vuoto");
+            }
+        } catch (NullPointerException e) {
+            throw new Exception("Il cognome non può' essere null");
+        }
     }
 
-    public final void setNome(String nome) {
-        this.nome = nome;
+    public final void setNome(String nome) throws Exception{
+        try {
+            if (!cognome.isEmpty()) {
+                if(Character.isUpperCase(cognome.charAt(0))){
+                    this.nome=nome;
+                }else{
+                    throw new Exception("Il nome deve avere la prima lettera maiuscola");
+                }
+            } else {
+                throw new Exception("Il nome non può essere vuoto");
+            }
+        } catch (NullPointerException e) {
+            throw new Exception("Il nome non può essere null");
+        }
     }
 
     public String toString() {
