@@ -45,45 +45,17 @@ public class Classe2 {
         capoClasse.setNome(t);
     }
     
-    public void ordinaCognome(){
-        Studente2[] studentiCopia = new Studente2[studenti.length];
-        int dimL=0;
-        Studente2 s;
-        for(int i='A';i<'Z';i++){
-            for(int c=0;c<studenti.length;c++){
-                if (studenti[c].getCognome().charAt(0) == i) {
-                    studentiCopia[dimL] = studenti[c];
-                    if (dimL > 1) {
-                        if (studentiCopia[dimL - 1].getCognome().charAt(0) == studentiCopia[dimL].getCognome().charAt(0)) {
-                            if (studentiCopia[dimL - 1].getCognome().charAt(1) == studentiCopia[dimL].getCognome().charAt(1)) {
-                                if (studentiCopia[dimL - 1].getCognome().charAt(2) > studentiCopia[dimL].getCognome().charAt(2)) {
-                                    s = studentiCopia[dimL - 1];
-                                    studentiCopia[dimL - 1] = studentiCopia[dimL];
-                                    studentiCopia[dimL] = s;
-                                } else if (studentiCopia[dimL - 1].getCognome().charAt(2) < studentiCopia[dimL].getCognome().charAt(2)) {
-                                    s = studentiCopia[dimL];
-                                    studentiCopia[dimL] = studentiCopia[dimL - 1];
-                                    studentiCopia[dimL - 1] = s;
-                                }
-                            } else {
-                                if (studentiCopia[dimL - 1].getCognome().charAt(1) > studentiCopia[dimL].getCognome().charAt(1)) {
-                                    s = studentiCopia[dimL - 1];
-                                    studentiCopia[dimL - 1] = studentiCopia[dimL];
-                                    studentiCopia[dimL] = s;
-                                } else if (studentiCopia[dimL - 1].getCognome().charAt(1) < studentiCopia[dimL].getCognome().charAt(1)) {
-                                    s = studentiCopia[dimL];
-                                    studentiCopia[dimL] = studentiCopia[dimL - 1];
-                                    studentiCopia[dimL - 1] = s;
-                                }
-                            }
-                        }
-                    }
-                    dimL++;
-
+    public void ordinaCognome()throws Exception{
+        String t;
+        for(int i=0;i<studenti.length;i++){
+            for(int c=i+1; c<studenti.length; c++){
+                if(studenti[i].getCognome().compareTo(studenti[c].getCognome())>0){
+                    t=studenti[i].getCognome();
+                    studenti[i].setCognome(studenti[c].getCognome());
+                    studenti[c].setCognome(t);
                 }
             }
         }
-        studenti=studentiCopia;
     }
     
     public String stampa() throws Exception{
