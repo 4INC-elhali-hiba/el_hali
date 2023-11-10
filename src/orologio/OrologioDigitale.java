@@ -28,14 +28,13 @@ public class OrologioDigitale extends Orologio{
 
     public String dammiOrario() {
         String t;
-        boolean b=false;
         if(espressione==12){
-            t=getOra()/2+" : "+getMinuti()+" : "+getSecondi();
             if(getOra()>12){
-                t+=" PM";
+                t = getOra() - 12 + " : " + getMinuti() + " : " + getSecondi()+" PM";
             }else{
-                t+=" AM";
+                t = getOra() + " : " + getMinuti() + " : " + getSecondi()+" AM";
             }
+            
         }else{
             t=super.dammiOrario();
         }

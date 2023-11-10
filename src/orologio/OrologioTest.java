@@ -14,10 +14,10 @@ public class OrologioTest {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int ora=18;
+        int ora=15;
         int minuti=22;
         int secondi=50;
-        int espressione=24;
+        int espressione=12;
         boolean accensione=false;
         
         Orologio o = new Orologio(ora,minuti,secondi);
