@@ -26,6 +26,6 @@ public class OrologioCucu extends Orologio{
     }
     
     public String stampa(){
-        return "\nClasse OrologioCucu"+"\nora: "+getOra()+"\nminuti: "+getMinuti()+"\nsecondi: "+getSecondi()+"\naccensione: "+accensione;
+        return "\nClasse OrologioCucu"+"\nora: "+super.getOra()+"\nminuti: "+super.getMinuti()+"\nsecondi: "+super.getSecondi()+"\naccensione: "+accensione;
     }
 }
