@@ -13,20 +13,31 @@ public class ProdottoTest {
 
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
      */
-    public static void main(String[] args) {
-        String nome="Patatine";
-        double prezzo=0.95;
-        int sconto=0;
-        Data data= new Data(17,11,2023);
-        Data scad= new Data(20,11,2023);
-        
-        String nome2="Alcol";
-        double prezzo2=3.25;
-        boolean plastica=true;
-        
-        Alimentari a = new Alimentari(scad,sconto,nome,prezzo);
-        NonAlimentari n = new NonAlimentari(plastica,nome2,prezzo2);
+    public static void main(String[] args) throws Exception {
+    
+        try {
+            String nome = "Latte";
+            double prezzo = 2.00;
+            int sconto = 0;
+            Data data = new Data(17, 11, 2023);
+            Data scad = new Data(18, 11, 2023);
+
+            String nome2 = "Alcol";
+            double prezzo2 = 3.25;
+            boolean plastica = true;
+
+            Alimentari a = new Alimentari(scad, sconto, nome, prezzo);
+            NonAlimentari n = new NonAlimentari(plastica, nome2, prezzo2);
+
+            System.out.println("Scontrino:");
+            System.out.println(a.listino(data));
+            System.out.println(n.listino());
+            
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
         
     }
     

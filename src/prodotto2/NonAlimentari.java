@@ -25,7 +25,12 @@ public class NonAlimentari extends Prodotto{
         this.plastica = plastica;
     }
     
-    public String stampa(){
+    public String listino(){
+        return super.getNome()+": "+super.getPrezzo()+" plastica: "+plastica;
+    }
+    
+    @Override
+    public String toString(){
         return "Classe NonAlimentari extends Prodotto\nnome: "+super.getNome()+"\nprezzo: "+super.getPrezzo()+"\nplastica: "+plastica;
     }
 }

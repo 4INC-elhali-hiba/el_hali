@@ -44,13 +44,12 @@ public class Data {
         this.anno = anno;
     }
     
-    public int distanzaGiorni(Data data1, Data data2){
-        int d;
-        if((data2.getGiorno()-data1.getGiorno())<1){
-            if(<=)
-        }else{
-            d=data2.getGiorno()-data1.getGiorno();
+    public boolean bisestile(int anno){
+        boolean bisest = false;
+        if((anno%400==0)||(anno%100!=0&&anno%4==0)){
+            bisest = true;
         }
+        return bisest;
     }
     
     public String stampa(){
