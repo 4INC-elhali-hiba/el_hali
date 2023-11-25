@@ -16,7 +16,7 @@ public class OrologioCucu extends Orologio{
         this.accensione = accensione;
     }
 
-    public boolean getAccensione(){
+    public boolean getAccensione() {
         return accensione;
     }
     
