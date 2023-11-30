@@ -42,12 +42,20 @@ public class Orologio {
     public final void setSecondi(int secondi) {
         this.secondi = secondi;
     }
-    
+
     public String dammiOrario(){
         return ora+" : "+minuti+" : "+secondi;
     }
-    
+
+    public void aggiungiOre(int ore){
+      ora+=ore;
+      while(ora>=24){
+          ora-=24;
+      }
+    }
+
     public String stampa(){
         return "\nClasse Orologio\nora: "+ora+"\nminuti: "+minuti+"\nsecondi: "+secondi;
     }
 }
+

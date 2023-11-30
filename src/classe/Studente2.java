@@ -32,35 +32,28 @@ public class Studente2 {
         return nome;
     }
 
-    public final void setCognome(String cognome) throws Exception{
-        try {
-            if (!cognome.isEmpty()) {
-                if(Character.isUpperCase(cognome.charAt(0))){
-                    this.cognome=cognome;
-                }else{
-                    throw new Exception("Il cognome deve avere la prima lettera maiuscola");
-                }
-            } else {
-                throw new Exception("Il cognome non può essere vuoto");
-            }
-        } catch (NullPointerException e) {
-            throw new Exception("Il cognome non può' essere null");
-        }
+    public final void setCognome(String cognome) throws Exception {
+        controlloStringa(cognome);
+        this.cognome = cognome;
     }
 
-    public final void setNome(String nome) throws Exception{
+    public final void setNome(String nome) throws Exception {
+        controlloStringa(nome);
+        this.nome = nome;
+    }
+
+    public void controlloStringa(String attr) throws Exception{
         try {
-            if (!cognome.isEmpty()) {
-                if(Character.isUpperCase(cognome.charAt(0))){
-                    this.nome=nome;
+            if (!attr.isEmpty()) {
+                if(Character.isUpperCase(attr.charAt(0))){
                 }else{
-                    throw new Exception("Il nome deve avere la prima lettera maiuscola");
+                    throw new Exception("L'attributo deve avere la prima lettera maiuscola");
                 }
             } else {
-                throw new Exception("Il nome non può essere vuoto");
+                throw new Exception("L'attributo non può essere vuoto");
             }
         } catch (NullPointerException e) {
-            throw new Exception("Il nome non può essere null");
+            throw new Exception("L'attributo non può essere null");
         }
     }
 

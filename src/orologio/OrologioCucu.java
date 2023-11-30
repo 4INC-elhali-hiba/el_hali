@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -16,7 +17,7 @@ public class OrologioCucu extends Orologio{
         this.accensione = accensione;
     }
 
-    public boolean getAccensione() {
+    public boolean getAccensione(){
         return accensione;
     }
     
@@ -25,7 +26,8 @@ public class OrologioCucu extends Orologio{
         return accensione;
     }
     
+    @Override
     public String stampa(){
-        return "\nClasse OrologioCucu"+"\nora: "+getOra()+"\nminuti: "+getMinuti()+"\nsecondi: "+getSecondi()+"\naccensione: "+accensione;
+        return "\nClasse OrologioCucu"+"\nora: "+super.getOra()+"\nminuti: "+super.getMinuti()+"\nsecondi: "+super.getSecondi()+"\naccensione: "+accensione;
     }
 }

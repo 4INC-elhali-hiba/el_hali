@@ -15,32 +15,34 @@ public class OrologioDigitale extends Orologio{
         super(ora, minuti, secondi);
         this.espressione = espressione;
     }
-    
+
     public int getEspressione(){
         return espressione;
     }
-    
-    public void selezionaEspressione(int formato){
+
+    public String selezionaEspressione(int formato){
         if(formato==12){
             espressione=12;
         }
+        return "formato scelto: "+formato;
     }
 
     public String dammiOrario() {
         String t;
-        boolean b=false;
-        if(espressione==12){
-            t=getOra()/2+" : "+getMinuti()+" : "+getSecondi();
-            if(getOra()>12){
-                t+=" PM";
-            }else{
-                t+=" AM";
+        int ore=super.getOra();
+        if(espressione == 12) {
+            if (getOra() > 12) {
+                t = (ore - 12) + " : " + getMinuti() + " : " + getSecondi();
+                t += " PM";
+            } else {
+                t = ore + " : " + getMinuti() + " : " + getSecondi();
+                t += " AM";
             }
         }else{
             t=super.dammiOrario();
         }
         return t;
     }
-    
-    
+
+
 }
